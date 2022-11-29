@@ -1,0 +1,117 @@
+<style>
+  .chart-container-text
+  {
+    display: flex;
+    justify-content: center;
+    padding: 5vh!important;
+    border: solid;
+    border-width: thin;
+    height: 35vh!important;
+    overflow-y: scroll;
+    width: 100% !important;
+    background-color: var(--white);
+    border-color: var(--light);
+  }
+  canvas
+  {
+    display: flex;
+    height: 100% !important;
+    width: 100%!important;
+    margin: auto!important;
+  }
+  .tools
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .tools img
+  {
+    border: solid;
+    border-width: thin;
+    border-radius: 100%;
+    width: 32px!important;
+    height: 32px!important;
+    cursor: pointer;
+    margin-left: 14% !important;
+    border-color: white!important;
+    background-color: white!important;
+  }
+  .tools img:hover
+  {
+    scale: 1.1;
+  }
+
+  .chart-header
+  {
+    background-color: var(--light);
+    justify-content: space-between!important;
+    display: flex!important;
+    padding: 1rem!important;
+  }
+  .chart-header > div
+  {
+    display: inline-flex!important;
+  }
+  .chart-header h2
+  {
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    font-weight: 500!important;
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+  }
+  .chart-header .chart-title
+  {
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+    max-width: 85% !important;
+  }
+  .chart-container-text
+  {
+    display: block!important;
+  }
+  .data-row
+  {
+    display: flex!important;
+    justify-content: start;
+    border-bottom:solid;
+    border-bottom-color:var(--light);
+    margin-bottom: 0.3rem!important;
+  }
+  .row-index
+  {
+    display: inline!important;
+    width: 5%;
+    text-align: center!important;
+    padding: 1rem!important;
+    background-color: var(--light);
+  }
+  .row-content
+  {
+    display: flex;
+    width: 90%;
+    padding: 1rem!important;
+  }
+</style>
+<div class="chart-card shadow-sm mb-2">
+  <div class="chart-header shadow-lg">
+    <div class="chart-title">
+      <h2>
+        {{structure.label}}
+      </h2>
+    </div>
+    <div class="">
+      <div class="tools">
+
+      </div>
+    </div>
+  </div>
+  <div class="chart-container-text">
+    <div *ngFor="let item of Data ; let rowIndex = index" class="data-row">
+      <div class="row-index">{{rowIndex+1}}</div>
+      <div class="row-content">{{item.value}}</div>
+    </div>
+  </div>
+</div>

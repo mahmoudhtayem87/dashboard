@@ -1,0 +1,103 @@
+<style>
+  .chart-container
+  {
+    display: flex;
+    justify-content: center;
+    padding: 5vh!important;
+    border: solid;
+    border-width: thin;
+    height: 35vh!important;
+    width: 100% !important;
+    background-color: var(--white);
+    border-color: var(--light);
+  }
+  canvas
+  {
+    display: flex;
+    height: 100% !important;
+    width: 100%!important;
+    margin: auto!important;
+  }
+  .tools
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .tools img
+  {
+    border: solid;
+    border-width: thin;
+    border-radius: 100%;
+    width: 32px!important;
+    height: 32px!important;
+    cursor: pointer;
+    margin-left: 14% !important;
+    border-color: white!important;
+    background-color: white!important;
+  }
+  .tools img:hover
+  {
+    scale: 1.1;
+  }
+
+  .chart-header
+  {
+    background-color: var(--light);
+    justify-content: space-between!important;
+    display: flex!important;
+    padding: 1rem!important;
+  }
+  .chart-header > div
+  {
+    display: inline-flex!important;
+  }
+  .chart-header h2
+  {
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    font-weight: 500!important;
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+  }
+  .chart-header .chart-title
+  {
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+    max-width: 85% !important;
+  }
+</style>
+<div class="chart-card shadow-sm mb-2">
+  <div class="chart-header shadow-lg">
+    <div class="chart-title">
+      <h2>
+        {{structure.label}}
+      </h2>
+    </div>
+    <div class="">
+      <div class="tools">
+        <img (click)="setPieChart()" [src]="pieIcon"  class="shadow" title="Show Pie Chart" />
+        <img (click)="setBarChart()" [src]="barIcon" class="shadow" title="Show Bar Chart" />
+
+      </div>
+    </div>
+  </div>
+  <div class="chart-container">
+    <canvas *ngIf="isReady && isPie" [datasets]="pieChartDatasets"
+            [labels]="pieChartLabels"
+            [legend]="pieChartLegend"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [type]="'pie'"
+            baseChart>
+    </canvas>
+    <canvas *ngIf="isReady && !isPie" [data]="barChartData"
+            [legend]="barChartLegend"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [type]="'bar'"
+            baseChart>
+    </canvas>
+  </div>
+</div>
