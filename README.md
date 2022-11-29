@@ -16,3 +16,4 @@ in order to build Liferay Angular Gallery, you will need to follow the below ste
 - Run the following command:
   - npm run build-element
 - Once the command is excited, a folder with the name "dashboard-build" will be generated, inside that folder you will find the required JS and CSS files.
+
