@@ -1,27 +1,18 @@
-# Dashboard
+# Liferay Angular Survey Dashboard Remote App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+This project was created to give an example about how to use Angular Custom Element with Liferay as a Remote App
 
-## Development server
+## How To Use
+- Upload the angular JS file and CSS file to Liferay Document And Media
+- Create a Liferay remote app
+- Provide the JS and CSS URL
+- For the HTML Element Name type "lr-dashboard"
+- Publish the Remote App
+- Edit your page and add the remote app to the page, once its in your page, configure it and provide the following property
+  - form-id=< Liferay form ID >
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## How to build
+in order to build Liferay Angular Gallery, you will need to follow the below steps:
+- Run the following command:
+  - npm run build-element
+- Once the command is excited, a folder with the name "dashboard-build" will be generated, inside that folder you will find the required JS and CSS files.
