@@ -2,6 +2,7 @@
 
 This project was created to give an example about how to use Angular Custom Element with Liferay as a Remote App
 
+Angular Survey Dashboard will enable you to present your surveys results in charts dynamiclly, you will need to configure the form id and then the app will dynamiclly render a chart per each element in your survey.
 ## How To Use
 - Upload the angular JS file and CSS file to Liferay Document And Media
 - Create a Liferay remote app
